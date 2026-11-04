@@ -42,7 +42,7 @@ jobs:
         uses: ./.github/actions/setup-node-pnpm
 
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+        run: pnpm install
 
       - name: Read version and normalize iOS marketing version
         id: meta
