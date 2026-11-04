@@ -68,6 +68,22 @@ jobs:
       - name: Generate iOS project
         run: pnpm run prebuild:ios
 
+      - name: Patch podspecs for iOS 16.3
+        run: |
+          python3 - <<'PY'
+          import glob
+          count = 0
+          for path in glob.glob('node_modules/**/*.podspec', recursive=True):
+              with open(path, 'r', encoding='utf-8', errors='ignore') as f:
+                  content = f.read()
+              new = content.replace(":ios => '16.4'", ":ios => '16.3'").replace(":tvos => '16.4'", ":tvos => '16.3'")
+              if new != content:
+                  with open(path, 'w', encoding='utf-8') as f:
+                      f.write(new)
+                  count += 1
+                  print(f'patched {path}')
+          print(f'Total patched: {count}')
+          PY
       - name: Install CocoaPods dependencies
         working-directory: apps/native/ios
         run: pod install
