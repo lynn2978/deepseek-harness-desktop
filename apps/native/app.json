@@ -89,15 +89,17 @@
         {
           "android": {
             "usesCleartextTraffic": true,
-            "buildArchs": ["arm64-v8a"],
+            "buildArchs": [
+              "arm64-v8a"
+            ],
             "enableMinifyInReleaseBuilds": true,
             "enableShrinkResourcesInReleaseBuilds": true,
             "enableBundleCompression": true,
             "useLegacyPackaging": true
           },
           "ios": {
-            "deploymentTarget": "16.3"
-        }
+            "deploymentTarget": "16.0"
+          }
         }
       ]
     ]
