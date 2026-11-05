@@ -19,6 +19,7 @@
     "@react-native-async-storage/async-storage": "catalog:native",
     "@reause/core": "catalog:runtime",
     "@tanstack/react-query": "catalog:runtime",
+    "buffer": "^6.0.3",
     "expo": "catalog:native",
     "expo-blur": "catalog:native",
     "expo-build-properties": "catalog:native",
